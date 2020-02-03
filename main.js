@@ -1,9 +1,9 @@
 //gameBoard Module
 const gameBoard = (function() {
   let board = [
-  ["","",""],
-  ["","",""],
-  ["","",""]
+  "X","O","O",
+  "X","X","O",
+  "X","O","X"
   ]
 
   return {
@@ -30,5 +30,18 @@ const Player = () => {
   return {test}
 }
 
-const jeff = Player();
-jeff.test();
+//Render gameBoard onto page
+function render(gameBoard){
+  const container = document.getElementById("container");
+
+  gameBoard.board.forEach(tile => {
+    const gameTile = document.createElement("div");
+    gameTile.classList.add("gameTile");
+
+    gameTile.innerHTML = tile;
+
+    container.appendChild(gameTile);
+  });
+}
+
+render(gameBoard);
