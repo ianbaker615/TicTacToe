@@ -32,11 +32,11 @@ const Player = () => {
 
 //Render gameBoard onto page
 function render(gameBoard){
-  const container = document.getElementById("container");
+  const container = document.getElementById("grid-container");
 
   gameBoard.board.forEach(tile => {
     const gameTile = document.createElement("div");
-    gameTile.classList.add("gameTile");
+    gameTile.classList.add("grid-tile");
 
     gameTile.innerHTML = tile;
 
